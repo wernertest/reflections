@@ -1,0 +1,101 @@
+git config --global push.default upstream
+git config --global merge.conflictstyle diff3
+
+# create new repository
+#run also into a directory with files
+# creates a ".git" file
+git init
+
+# adds files to the staging area
+# files that remembered to be committed
+git add
+
+# add files in the stating area to a new commit
+git commit
+
+# compares differences between working directory and staging area
+git diff
+
+# compares changes between staging area and repository
+git diff --staged
+
+# show git diff to the parent of the commit
+git show [commit]
+
+#remove a file from the staging area
+git reset FILE
+
+# see the history of the commits
+git log
+# the visual representation of the commit history
+git log --graph --oneline master coins
+
+# discards all changes in either the working directory or the staging area
+git reset --hard
+
+# check outs main branch
+git checkout master
+
+# combine new branch and checkout of the branch
+git checkout -b new_branch_name
+# is equal to
+git branch new_branch_name
+git checkout new_branch_name
+
+# checkout a commit
+git checkout 3884eab839af1e82c44267484cf2945a766081f3
+# commit is within the actual branch, not reachable
+# starts new branch that begins from the recently checkout commit
+git checkout -b new_branch_name
+
+# runs git garbace collections
+# removes commits that are unreachable from existing branches
+git gc
+
+
+# git add: add all files to the staging area that you want to have in one commit
+# git commit: make new commit that includes all files in the staging area
+
+# Overview about local branches
+git branch
+
+# Creates a new branch
+git branch NEW-BRANCH
+
+# deletes the branch: removes the labels for the branch
+git branch -d BRANCH
+
+# Hard delete of the branch: removes the labels for the branch
+git branch -D BRANCH
+
+# checkout the branch I want to continue, that should the label for the commit
+git checkout MASTER
+# merges the branch into the actual one
+git merge BRANCH
+# more infos on merge and merge conflicts
+https://git-scm.com/book/de/v1/Git-Branching-Einfaches-Branching-und-Merging
+# Git and “The branch 'x' is not fully merged” Error
+https://stackoverflow.com/questions/7548926/git-and-the-branch-x-is-not-fully-merged-error
+
+# see all current remotes
+git remote
+# see more information on remotes
+git remote -v
+
+# adds a remote repository "origin"
+git remote add origin
+
+#…or create a new repository on the command line
+echo "# reflections" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin git@github.com:wernertest/reflections.git
+#git remote add origin https://github.com/wernertest/reflections.git
+git push -u origin master
+#…or push an existing repository from the command line
+git remote add origin https://github.com/wernertest/reflections.git
+git push -u origin master
+
+# sent data to repository, origin=remote repository, master=local branch to push
+git push origin master
